@@ -1,0 +1,16 @@
+<%- include("partials/header") %>
+<div class="container">
+	<div class="text-center">
+<h2 class="display-2" style="text-Decoration-line: underline;"><%= games.title %></h2>
+		<div class="container d-flex">
+	<div class="card justify-content-center" style="width: 40rem; margin:0 auto;">
+<img  src="<%= games.image %>" class="card-img-top ">
+			</div>
+	</div>
+<hr>	
+<p style="font-size:20px; letter-spacing:2px; font-weight:normal; line-height:2;"><%- games.description %></p>
+	</div>
+	<hr>
+</div>
+
+<%- include("partials/footer") %>

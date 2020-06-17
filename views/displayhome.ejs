@@ -1,0 +1,36 @@
+<%- include("partials/header")%>
+
+<div class="ui main text container" style="margin-top:20px;">
+	<div class="ui huge header">Sports Article</div>
+	<hr>
+	<div class="ui top attached segment">
+		<div class="ui divided items">
+     	 <% sport.forEach(function(games){ %>
+			<div class="item">
+				<div class="image">
+                <img src=" <%= games.image %>">					
+				</div>
+				<div class="content">
+				<h1 class="header"><%= games.title %></h1>	
+					<div class="meta">
+					<span class="cinema"> <%= games.time.toUTCString() %></span>	
+					</div>
+					<div class="extra">
+						<a href="/home/<%= games._id %>" class="ui inverted red button">Read More</a>
+				</div>
+					<div class="extra">
+						<a href="/home/<%= games._id %>/edit" class="ui inverted green button" style="float:right;">Edit</a>
+				</div>
+					<div class="extra">
+					<form action="/home/<%= games._id%>?_method=DELETE" method="POST">
+				<button class="ui inverted red button" type="submit"style="float:right;" >DELETE</button>
+			</form>	
+				</div>
+			</div>
+		</div>
+	
+<% })  %>
+</div>	
+</div>
+</div>
+<%- include("partials/footer")%>

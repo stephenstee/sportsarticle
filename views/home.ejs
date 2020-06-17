@@ -1,0 +1,42 @@
+<%- include("partials/header")%>
+<style>
+	 marquee{
+    font-size: 40px;
+    font-weight: 800;
+    color: black;
+    font-family: sans-serif;
+		 margin: 20px 0;
+    }
+ 
+</style>
+       <marquee scrolldelay="50" scrollamount="10" truespeed>TRENDINGS... TRENDINGS... TRENDINGS... TRENDINGS...</marquee>
+
+<div class="ui main text container" style="margin-top:20px;">
+	<div class="ui huge header">Sports Article</div>
+	<hr>
+	<div class="ui top attached segment">
+		<div class="ui divided items">
+     	 <% sport.forEach(function(games){ %>
+			<div class="item">
+				<div class="image">
+                <img src=" <%= games.image %>">					
+				</div>
+				<div class="content">
+				<h1 class="header"><%= games.title %></h1>	
+					<div class="meta">
+					<span class="cinema"> <%= games.time.toUTCString() %></span>	
+					</div>
+					<div class="extra">
+						<a href="/home/<%= games._id %>" class="ui inverted red button">Read More</a>
+				</div>
+			</div>
+		</div>
+	
+<% })  %>
+</div>	
+</div>
+</div>
+
+
+
+<%- include("partials/footer")%>
